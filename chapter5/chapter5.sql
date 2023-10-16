@@ -203,6 +203,46 @@ SELECT
 FROM 
 	us_counties_2010;
 
+-- Listing 5-16 --
+
+SELECT 
+	mode() 
+	WITHIN GROUP (ORDER BY p0010001)
+FROM 
+	us_counties_2010;
+	
+-- Try It Yourself --
+-- Q1 --
+
+SELECT 3.14159265359*(5^2) AS "Area of 5 inch radius Circle";
+
+-- Q2 --
+
+SELECT 
+	geo_name,
+	state_us_abbreviation AS "st",
+	p0010001 AS "Total Population",
+	p0010005 AS "Am Indian/Alaska Native Alone",
+	CAST((p0010005 / p0010001) AS numeric(10,1)) * 100 AS "Percentage Indian/Alaska Native Alone"
+FROM 
+	us_counties_2010
+WHERE
+	state_us_abbreviation = 'NY'
+ORDER BY
+	"Percentage Indian/Alaska Native Alone" DESC;
+	
+-- Q3 --
+
+SELECT 
+	sum(p0010001) AS "County Sum",
+	round(avg(p0010001), 0) AS "County Average",
+	percentile_cont(.5)
+	WITHIN GROUP (ORDER BY p0010001) AS "County Median"
+FROM 
+	us_counties_2010;
+	
+	
+
 
 
 
