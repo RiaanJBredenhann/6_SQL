@@ -15,7 +15,7 @@ CREATE TABLE meat_poultry_egg_inspect (
 );
 
 COPY meat_poultry_egg_inspect
-FROM 'C:\YourDirectory\MPI_Directory_by_Establishment_Name.csv'
+FROM 'C:\YourDirectory\chapter9\MPI_Directory_by_Establishment_Name.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
 
 CREATE INDEX company_idx ON meat_poultry_egg_inspect (company);
@@ -169,7 +169,7 @@ CREATE TABLE state_regions (
 );
 
 COPY state_regions
-FROM 'C:\YourDirectory\state_regions.csv'
+FROM 'C:\YourDirectory\chapter9\state_regions.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
 
 -- Listing 9-19: Adding and updating an inspection_date column
