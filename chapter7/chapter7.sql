@@ -13,6 +13,7 @@
 
 --
 
+-- Listing 7-1 --
 
 -- As a column constraint
 CREATE TABLE natural_key_example (
@@ -172,7 +173,7 @@ CREATE TABLE new_york_addresses (
 );
 
 COPY new_york_addresses
-FROM 'C:\YourDirectory\chapter6\city_of_new_york.csv'
+FROM 'C:\YourDirectory\chapter7\city_of_new_york.csv'
 WITH (FORMAT CSV, HEADER);
 
 -- Listing 7-12: Benchmark queries for index performance
