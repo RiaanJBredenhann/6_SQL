@@ -38,7 +38,7 @@ WHERE school = 'Myers Middle School';
 
 SELECT first_name
 FROM teachers
-WHERE first_name LIKE 'sam%';
+WHERE first_name LIKE 'Sam%';
 
 SELECT first_name
 FROM teachers
@@ -71,7 +71,7 @@ ORDER BY hire_date DESC;
 -- Try It Yourself --
 -- Q1 --
 
-SELECT * FROM teachers ORDER BY school, last_name DESC;
+SELECT * FROM teachers ORDER BY school ASC, last_name ASC;
 
 -- Q2 --
 
