@@ -1,3 +1,19 @@
+-- Important Information --
+
+-- CHECK Evaluates whether the data falls within values we specify
+
+-- UNIQUE Ensures that values in a column or group of columns are
+-- unique in each row in the table
+
+-- NOT NULL Prevents NULL values in a column
+
+-- Rules for Primary Keys
+--  1. Each column in the key must have a unique value for each row.
+--  2. No column in the key can have missing values.
+
+--
+
+
 -- As a column constraint
 CREATE TABLE natural_key_example (
     license_id varchar(10) CONSTRAINT license_key PRIMARY KEY,
@@ -34,13 +50,13 @@ CREATE TABLE natural_key_composite_example (
 -- Listing 7-4: Example of a composite primary key violation
 
 INSERT INTO natural_key_composite_example (student_id, school_day, present)
-VALUES(775, '1/22/2017', 'Y');
+VALUES(775, '2017/1/22', 'Y');
 
 INSERT INTO natural_key_composite_example (student_id, school_day, present)
-VALUES(775, '1/23/2017', 'Y');
+VALUES(775, '2017/1/23', 'Y');
 
 INSERT INTO natural_key_composite_example (student_id, school_day, present)
-VALUES(775, '1/23/2017', 'N');
+VALUES(775, '2017/1/23', 'N');
 
 -- Listing 7-5: Declaring a bigserial column as a surrogate key
 
