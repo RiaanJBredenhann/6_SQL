@@ -81,7 +81,7 @@ CREATE INDEX city2014_idx ON pls_fy2014_pupld14a (city);
 CREATE INDEX visits2014_idx ON pls_fy2014_pupld14a (visits);
 
 COPY pls_fy2014_pupld14a
-FROM 'C:\YourDirectory\/chapter8\pls_fy2014_pupld14a.csv'
+FROM 'C:\YourDirectory\chapter8\pls_fy2014_pupld14a.csv'
 WITH (FORMAT CSV, HEADER);
 
 -- Listing 8-2: Creating and filling the 2009 Public Libraries Survey table
@@ -165,6 +165,8 @@ CREATE INDEX visits2009_idx ON pls_fy2009_pupld09a (visits);
 COPY pls_fy2009_pupld09a
 FROM 'C:\YourDirectory\chapter8\pls_fy2009_pupld09a.csv'
 WITH (FORMAT CSV, HEADER);
+
+SELECT * FROM pls_fy2009_pupld09a;
 
 -- Listing 8-3: Using count() for table row counts
 
@@ -260,7 +262,7 @@ WHERE visits >= 0;
 
 SELECT sum(pls14.visits) AS visits_2014,
        sum(pls09.visits) AS visits_2009
-FROM pls_fy2014_pupld14a pls14 JOIN pls_fy2009_pupld09a pls09
+FROM pls_fy2014_pupld14a AS pls14 JOIN pls_fy2009_pupld09a AS pls09
 ON pls14.fscskey = pls09.fscskey
 WHERE pls14.visits >= 0 AND pls09.visits >= 0;
 
@@ -271,7 +273,7 @@ SELECT pls14.stabr,
        sum(pls09.visits) AS visits_2009,
        round( (CAST(sum(pls14.visits) AS decimal(10,1)) - sum(pls09.visits)) /
                     sum(pls09.visits) * 100, 2 ) AS pct_change
-FROM pls_fy2014_pupld14a pls14 JOIN pls_fy2009_pupld09a pls09
+FROM pls_fy2014_pupld14a AS pls14 JOIN pls_fy2009_pupld09a AS pls09
 ON pls14.fscskey = pls09.fscskey
 WHERE pls14.visits >= 0 AND pls09.visits >= 0
 GROUP BY pls14.stabr
