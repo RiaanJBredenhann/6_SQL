@@ -94,10 +94,10 @@ INSERT INTO licenses (license_id, first_name, last_name)
 VALUES ('T229901', 'Lynn', 'Malero');
 
 INSERT INTO registrations (registration_id, registration_date, license_id)
-VALUES ('A203391', '3/17/2017', 'T229901');
+VALUES ('A203391', '2017/3/17', 'T229901');
 
 INSERT INTO registrations (registration_id, registration_date, license_id)
-VALUES ('A75772', '3/17/2017', 'T000001');
+VALUES ('A75772', '2017/3/17', 'T000001');
 
 -- Listing 7-7: CHECK constraint examples
 
@@ -172,7 +172,7 @@ CREATE TABLE new_york_addresses (
 );
 
 COPY new_york_addresses
-FROM 'C:\YourDirectory\city_of_new_york.csv'
+FROM 'C:\YourDirectory\chapter6\city_of_new_york.csv'
 WITH (FORMAT CSV, HEADER);
 
 -- Listing 7-12: Benchmark queries for index performance
