@@ -88,7 +88,7 @@ FROM time_zone_test;
 
 -- Math with dates!
 
-SELECT '9/30/1929'::date - '9/27/1929'::date;
+SELECT '1929/9/30'::date - '1929/9/27'::date;
 SELECT '9/30/1929'::date + '5 years'::interval;
 
 
@@ -167,7 +167,7 @@ COPY
     GROUP BY trip_hour
     ORDER BY trip_hour
     )
-TO 'C:\YourDirectory\hourly_pickups_2016_06_01.csv'
+TO 'C:\YourDirectory\chapter11\hourly_pickups_2016_06_01.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
 
 -- Listing 11-10: Calculating median trip time by hour
