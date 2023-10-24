@@ -1,10 +1,3 @@
---------------------------------------------------------------
--- Practical SQL: A Beginner's Guide to Storytelling with Data
--- by Anthony DeBarros
-
--- Chapter 10 Code Examples
---------------------------------------------------------------
-
 -- Listing 10-1: Create Census 2011-2015 ACS 5-Year stats table and import data
 
 CREATE TABLE acs_2011_2015_stats (
@@ -19,7 +12,7 @@ CREATE TABLE acs_2011_2015_stats (
 );
 
 COPY acs_2011_2015_stats
-FROM 'C:\YourDirectory\acs_2011_2015_stats.csv'
+FROM 'C:\YourDirectory\chapter10\acs_2011_2015_stats.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
 
 SELECT * FROM acs_2011_2015_stats;
@@ -145,7 +138,7 @@ CREATE TABLE fbi_crime_data_2015 (
 );
 
 COPY fbi_crime_data_2015
-FROM 'C:\YourDirectory\fbi_crime_data_2015.csv'
+FROM 'C:\YourDirectory\chapter10\fbi_crime_data_2015.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
 
 SELECT * FROM fbi_crime_data_2015
