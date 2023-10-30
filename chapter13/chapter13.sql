@@ -63,7 +63,7 @@ CREATE TABLE crime_reports (
 );
 
 COPY crime_reports (original_text)
-FROM 'C:\YourDirectory\crime_reports.csv'
+FROM 'C:\YourDirectory\chapter13\crime_reports.csv'
 WITH (FORMAT CSV, HEADER OFF, QUOTE '"');
 
 SELECT original_text FROM crime_reports;
@@ -129,6 +129,8 @@ SELECT
 FROM crime_reports;
 
 -- Listing 13-9: Updating the crime_reports date_1 column
+
+SET datestyle = 'ISO,MDY';
 
 UPDATE crime_reports
 SET date_1 = 
@@ -258,7 +260,7 @@ CREATE TABLE president_speeches (
 );
 
 COPY president_speeches (president, title, speech_date, speech_text)
-FROM 'C:\YourDirectory\sotu-1946-1977.csv'
+FROM 'C:\YourDirectory\chapter13\sotu-1946-1977.csv'
 WITH (FORMAT CSV, DELIMITER '|', HEADER OFF, QUOTE '@');
 
 SELECT * FROM president_speeches;
