@@ -304,9 +304,9 @@ CREATE TRIGGER temperature_insert
 
 INSERT INTO temperature_test (station_name, observation_date, max_temp, min_temp)
 VALUES
-    ('North Station', '1/19/2019', 10, -3),
-    ('North Station', '3/20/2019', 28, 19),
-    ('North Station', '5/2/2019', 65, 42),
-    ('North Station', '8/9/2019', 93, 74);
+    ('North Station', '2019/1/19', 10, -3),
+    ('North Station', '2019/3/20', 28, 19),
+    ('North Station', '2019/5/2', 65, 42),
+    ('North Station', '2019/8/9', 93, 74);
 
 SELECT * FROM temperature_test;
