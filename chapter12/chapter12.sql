@@ -12,6 +12,8 @@ ORDER BY p0010001 DESC;
 
 -- Listing 12-2: Using a subquery in a WHERE clause for DELETE
 
+DROP TABLE us_counties_2010_top10;
+
 CREATE TABLE us_counties_2010_top10 AS
 SELECT * FROM us_counties_2010;
 

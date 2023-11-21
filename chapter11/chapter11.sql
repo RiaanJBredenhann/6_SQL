@@ -36,6 +36,7 @@ SELECT
     now();
 
 -- Listing 11-3: Comparing current_timestamp and clock_timestamp() during row insert
+DROP TABLE current_time_example;
 
 CREATE TABLE current_time_example (
     time_id bigserial,
@@ -44,8 +45,7 @@ CREATE TABLE current_time_example (
 );
 
 INSERT INTO current_time_example (current_timestamp_col, clock_timestamp_col)
-    (SELECT current_timestamp,
-            clock_timestamp()
+    (SELECT current_timestamp, clock_timestamp()
      FROM generate_series(1,1000));
 
 SELECT * FROM current_time_example;
